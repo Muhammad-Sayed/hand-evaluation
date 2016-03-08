@@ -1,0 +1,83 @@
+[System]
+Name='fingerFlexion'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=3
+NumRules=10
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='MCP'
+Range=[-0.5236 1.7453]
+NumMFs=8
+MF1='hyperFlexed':'gaussmf',[0.1204 -0.5236]
+MF2='Extended':'gaussmf',[0.1204 0]
+MF3='verySlightlyFlexed':'gaussmf',[0.1204 0.2909]
+MF4='slightlyFlexed':'gaussmf',[0.1204 0.5818]
+MF5='belowHalfFlexed':'gaussmf',[0.1204 0.8727]
+MF6='aboveHalfFlexed':'gaussmf',[0.1204 1.164]
+MF7='Flexed':'gaussmf',[0.12 1.4544]
+MF8='fullyFlexed':'gaussmf',[0.12 1.7453]
+
+[Input2]
+Name='PIP'
+Range=[0 2.0944]
+NumMFs=4
+MF1='Extended':'gaussmf',[0.2966 0]
+MF2='slightlyFlexed':'gaussmf',[0.2966 0.6925]
+MF3='Flexed':'gaussmf',[0.2966 1.396]
+MF4='fullyFlexed':'gaussmf',[0.2966 2.09088392857143]
+
+[Input3]
+Name='DIP'
+Range=[0 1.3963]
+NumMFs=3
+MF1='Extended':'gaussmf',[0.2964 0]
+MF2='slightlyFlexed':'gaussmf',[0.2964 0.4617]
+MF3='Flexed':'gaussmf',[0.2964 1.396]
+
+[Output1]
+Name='FlexionState'
+Range=[-1 6]
+NumMFs=8
+MF1='hyperFlexed':'trimf',[-1.5 -1 -0.25]
+MF2='Extended':'trimf',[-0.75 0 0.75]
+MF3='verySlightlyFlexed':'trimf',[0.25 1 1.75]
+MF4='slightlyFlexed':'trimf',[1.25 2 2.75]
+MF5='belowHalfFlexed':'trimf',[2.25 3 3.75]
+MF6='aboveHalfFlexed':'trimf',[3.25 4 4.75]
+MF7='Flexed':'trimf',[4.25 5 5.75]
+MF8='fullyFlexed':'trimf',[5.25 6 6.75]
+
+[Output2]
+Name='FlexionUniformity'
+Range=[0 1]
+NumMFs=4
+MF1='Sharp':'trapmf',[-0.2 0 0.15 0.2]
+MF2='NonUniform':'trapmf',[0.2 0.25 0.45 0.5]
+MF3='Uniform':'trapmf',[0.8 0.85 1 1.2]
+MF4='SemiUniform':'trapmf',[0.5 0.55 0.75 0.8]
+
+[Output3]
+Name='FlexionProximity'
+Range=[0 1]
+NumMFs=2
+MF1='Distal':'trapmf',[-0.3 0 0.3 0.6]
+MF2='Proximal':'trapmf',[0.4 0.7 1 1.3]
+
+[Rules]
+2 1 1, 2 3 0 (1) : 1
+1 1 1, 1 2 2 (1) : 1
+3 2 2, 3 3 0 (1) : 1
+4 2 2, 4 3 0 (1) : 1
+5 3 2, 5 3 0 (1) : 1
+6 3 2, 6 3 0 (1) : 1
+7 3 2, 7 3 0 (1) : 1
+8 4 3, 8 3 0 (1) : 1
+7 3 3, 7 3 0 (1) : 1
+7 3 1, 7 4 0 (1) : 1

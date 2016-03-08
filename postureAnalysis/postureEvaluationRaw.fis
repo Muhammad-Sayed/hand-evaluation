@@ -1,0 +1,179 @@
+[System]
+Name='postureEvaluationRaw'
+Type='mamdani'
+Version=2.0
+NumInputs=20
+NumOutputs=1
+NumRules=0
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='upper-fingers'
+Range=[-10 20]
+NumMFs=3
+MF1='crossing':'trapmf',[-20 -10 -5.5 -5]
+MF2='together':'trapmf',[-5.5 -5 5 5.5]
+MF3='separated':'trapmf',[5 5.5 20 30]
+
+[Input2]
+Name='center-fingers'
+Range=[-10 20]
+NumMFs=3
+MF1='crossing':'trapmf',[-20 -10 -5.5 -5]
+MF2='together':'trapmf',[-5.5 -5 5 5.5]
+MF3='separated':'trapmf',[5 5.5 20 30]
+
+[Input3]
+Name='lower-fingers'
+Range=[-10 20]
+NumMFs=3
+MF1='crossing':'trapmf',[-20 -10 -5.5 -5]
+MF2='together':'trapmf',[-5.5 -5 5 5.5]
+MF3='separated':'trapmf',[5 5.5 20 30]
+
+[Input4]
+Name='index-MCP'
+Range=[0 80]
+NumMFs=3
+MF1='extended':'trapmf',[-25 -5 15 25]
+MF2='slightly-bent':'trapmf',[15 25 40 50]
+MF3='bent':'trapmf',[40 50 100 110]
+
+[Input5]
+Name='index-PIP'
+Range=[0 100]
+NumMFs=3
+MF1='straight':'trapmf',[-25 -5 15 25]
+MF2='slightly-bent':'trapmf',[15 25 40 50]
+MF3='bent':'trapmf',[40 50 100 110]
+
+[Input6]
+Name='index-DIP'
+Range=[0 90]
+NumMFs=3
+MF1='straight':'trapmf',[-25 -5 15 25]
+MF2='slightly-bent':'trapmf',[15 25 40 50]
+MF3='bent':'trapmf',[40 50 100 110]
+
+[Input7]
+Name='middle-MCP'
+Range=[0 80]
+NumMFs=3
+MF1='extended':'trapmf',[-25 -5 15 25]
+MF2='slightly-bent':'trapmf',[15 25 40 50]
+MF3='bent':'trapmf',[40 50 100 110]
+
+[Input8]
+Name='middle-PIP'
+Range=[0 100]
+NumMFs=3
+MF1='straight':'trapmf',[-25 -5 15 25]
+MF2='slightly-bent':'trapmf',[15 25 40 50]
+MF3='bent':'trapmf',[40 50 100 110]
+
+[Input9]
+Name='middle-DIP'
+Range=[0 90]
+NumMFs=3
+MF1='straight':'trapmf',[-25 -5 15 25]
+MF2='slightly-bent':'trapmf',[15 25 40 50]
+MF3='bent':'trapmf',[40 50 100 110]
+
+[Input10]
+Name='ring-MCP'
+Range=[0 80]
+NumMFs=3
+MF1='extended':'trapmf',[-25 -5 15 25]
+MF2='slightly-bent':'trapmf',[15 25 40 50]
+MF3='bent':'trapmf',[40 50 100 110]
+
+[Input11]
+Name='ring-PIP'
+Range=[0 100]
+NumMFs=3
+MF1='straight':'trapmf',[-25 -5 15 25]
+MF2='slightly-bent':'trapmf',[15 25 40 50]
+MF3='bent':'trapmf',[40 50 100 110]
+
+[Input12]
+Name='ring-DIP'
+Range=[0 90]
+NumMFs=3
+MF1='straight':'trapmf',[-25 -5 15 25]
+MF2='slightly-bent':'trapmf',[15 25 40 50]
+MF3='bent':'trapmf',[40 50 100 110]
+
+[Input13]
+Name='small-MCP'
+Range=[0 80]
+NumMFs=3
+MF1='extended':'trapmf',[-25 -5 15 25]
+MF2='slightly-bent':'trapmf',[15 25 40 50]
+MF3='bent':'trapmf',[40 50 100 110]
+
+[Input14]
+Name='small-PIP'
+Range=[0 100]
+NumMFs=3
+MF1='straight':'trapmf',[-25 -5 15 25]
+MF2='slightly-bent':'trapmf',[15 25 40 50]
+MF3='bent':'trapmf',[40 50 100 110]
+
+[Input15]
+Name='small-DIP'
+Range=[0 90]
+NumMFs=3
+MF1='straight':'trapmf',[-25 -5 15 25]
+MF2='slightly-bent':'trapmf',[15 25 40 50]
+MF3='bent':'trapmf',[40 50 100 110]
+
+[Input16]
+Name='thumb-opposition'
+Range=[0 90]
+NumMFs=2
+MF1='retroposition':'trapmf',[-20 -10 10 80]
+MF2='opposition':'trapmf',[10 80 100 110]
+
+[Input17]
+Name='thumb-palmar-abduction'
+Range=[0 60]
+NumMFs=2
+MF1='adducted':'trapmf',[-20 -10 10 50]
+MF2='abducted':'trapmf',[10 50 70 90]
+
+[Input18]
+Name='thumb-radial-abduction'
+Range=[0 60]
+NumMFs=2
+MF1='adjacent-to-palm':'trapmf',[-20 -10 10 50]
+MF2='far-from-palm':'trapmf',[10 50 70 90]
+
+[Input19]
+Name='thumb-MCP'
+Range=[0 55]
+NumMFs=3
+MF1='extended':'trapmf',[-25 -5 15 25]
+MF2='slightly-bent':'trapmf',[15 25 30 40]
+MF3='bent':'trapmf',[30 40 55 75]
+
+[Input20]
+Name='thumb-IP'
+Range=[0 80]
+NumMFs=3
+MF1='straight':'trapmf',[-25 -5 15 25]
+MF2='slightly-bent':'trapmf',[15 25 40 50]
+MF3='bent':'trapmf',[40 50 100 110]
+
+[Output1]
+Name='output1'
+Range=[0 1]
+NumMFs=3
+MF1='mf1':'trimf',[-0.4 0 0.4]
+MF2='mf2':'trimf',[0.1 0.5 0.9]
+MF3='mf3':'trimf',[0.6 1 1.4]
+
+[Rules]
